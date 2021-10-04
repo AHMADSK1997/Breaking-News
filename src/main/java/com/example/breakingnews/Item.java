@@ -1,4 +1,4 @@
-package myPackage;
+package com.example.breakingnews;
 
 public class Item {
     private String title;
@@ -7,6 +7,7 @@ public class Item {
     private String pubDate;
     private String guid;
     private String tags;
+
     public Item(String title, String description, String link, String pubDate, String guid, String tags) {
         this.title = title;
         this.description = description;
@@ -15,39 +16,51 @@ public class Item {
         this.guid = guid;
         this.tags = tags;
     }
+
     public String getTitle() {
-        return title;
+        return this.title;
     }
+
     public void setTitle(String title) {
         this.title = title;
     }
+
     public String getDescription() {
-        return description;
+        return this.description;
     }
+
     public void setDescription(String description) {
         this.description = description;
     }
+
     public String getLink() {
-        return link;
+        return this.link;
     }
+
     public void setLink(String link) {
         this.link = link;
     }
+
     public String getPubDate() {
-        return pubDate;
+        return this.pubDate;
     }
+
     public void setPubDate(String pubDate) {
         this.pubDate = pubDate;
     }
+
     public String getGuid() {
-        return guid;
+        return this.guid;
     }
+
     public void setGuid(String guid) {
         this.guid = guid;
     }
+
     public String getTags() {
-        return tags;
+        return this.tags;
     }
+
     public void setTags(String tags) {
         this.tags = tags;
     }
