@@ -1,4 +1,4 @@
-package com.example.BreakingNews;
+package myPackage;
 
 import java.io.BufferedReader;
 import java.io.IOException;

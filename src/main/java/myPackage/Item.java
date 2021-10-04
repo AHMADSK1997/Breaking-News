@@ -1,4 +1,4 @@
-package com.example.BreakingNews;
+package myPackage;
 
 public class Item {
     private String title;
