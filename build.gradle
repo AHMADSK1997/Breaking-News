@@ -11,7 +11,11 @@ sourceCompatibility = '11'
 repositories {
     mavenCentral()
 }
-
+// tag::jar[]
+jar {
+    archiveBaseName = 'my-gradle'
+    archiveVersion =  '0.1.0'
+}
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -27,11 +31,6 @@ dependencies {
     implementation group: 'org.thymeleaf', name: 'thymeleaf', version: '3.0.12.RELEASE'
 // https://mvnrepository.com/artifact/org.webjars/bootstrap
     implementation group: 'org.webjars', name: 'bootstrap', version: '5.1.1'
-
-
-
-
-
 }
 
 test {
