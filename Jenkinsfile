@@ -5,7 +5,7 @@ def attachments = [
     color: '#ff0000'
   ]
 ]
-slackSend(channel: "#general", attachments: attachments)
+slackSend(channel: "#pipeline-breaking-news", attachments: attachments)
 
 pipeline {
     
