@@ -1,3 +1,12 @@
+def attachments = [
+  [
+    text: 'I find your lack of faith disturbing!',
+    fallback: 'Hey, Vader seems to be mad at you.',
+    color: '#ff0000'
+  ]
+]
+slackSend(channel: "#general", attachments: attachments)
+
 pipeline {
     
     agent any
@@ -14,14 +23,17 @@ pipeline {
                 sh "./gradlew build"
             }
         }
-        stage('run'){
+        stage('Run'){
             steps{
                 sh 'JENKINS_NODE_COOKIE=dontkill java -jar ./build/libs/BreakingNews-0.0.1-SNAPSHOT.jar &'
             }
         }
-    }
-    post{
-        success {
-            slackSend baseUrl: 'https://hooks.slack.com/services/', channel: 'pipeline-breaking-news', tokenCredentialId: 'Slack-jenkins'        }
+        stage('Send Slack'){
+            steps {
+                slackSend color: "good", message: "Message from Jenkins Pipeline"
+            }
+        }
     }
 }
+
+    
