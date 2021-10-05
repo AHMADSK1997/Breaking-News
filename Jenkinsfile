@@ -5,14 +5,13 @@ def attachments = [
     color: '#ff0000'
   ]
 ]
-slackSend(channel: "#pipeline-breaking-news", attachments: attachments)
+def slackResponse = slackSend(channel: "#pipeline-breaking-news", attachments: attachments)
 
 pipeline {
     
     agent any
     
     stages{
-        //
         stage('Clone from Github') {
             steps {
                 git branch: 'master', url:'https://github.com/AHMADSK1997/Breaking-News.git'
@@ -30,7 +29,7 @@ pipeline {
         }
         stage('Send Slack'){
             steps {
-                slackSend color: "good", message: "Message from Jenkins Pipeline"
+                slackSend(channel: slackResponse.channelId, message : 'The app is running', timestamp: slackResponse.ts)
             }
         }
     }
