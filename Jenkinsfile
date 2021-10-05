@@ -22,7 +22,6 @@ pipeline {
     }
     post{
         success {
-            slackSend color: 'good', message: 'The App is runing'
-        }
+            slackSend baseUrl: 'https://hooks.slack.com/services/', channel: 'pipeline-breaking-news', tokenCredentialId: 'Slack-jenkins'        }
     }
 }
